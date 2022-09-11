@@ -28,6 +28,7 @@ class _LoginViewState extends State<LoginView> {
                 titleText(),
                 _loginForm(),
                 _loginButton(),
+                _registerPageLink(),
               ],
             ),
           ),
@@ -47,6 +48,7 @@ class _LoginViewState extends State<LoginView> {
           children: [
             emailTextField(),
             passwordTextField(),
+
           ],
         ),
       ),
@@ -98,11 +100,26 @@ class _LoginViewState extends State<LoginView> {
 
   Widget _loginButton(){
     return MaterialButton(
-      onPressed: (){},
+      onPressed: _loginUser,
       minWidth: _deviceWidth! * 0.70,
       height: _deviceHeight! * 0.06,
       color: Colors.red,
       child: const Text('Login', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 25,),),
+    );
+  }
+  void _loginUser(){
+    print(_loginKey.currentState?.validate());
+    if(_loginKey.currentState!.validate()){}
+
+  }
+
+  Widget _registerPageLink (){
+    return GestureDetector(
+      onTap: ()=> Navigator.pushNamed(context, 'register'),
+      child: const Text('Don\'t have an account?',
+      style: TextStyle(color: Colors.blue,
+      fontSize: 15,
+      fontWeight: FontWeight.w200),),
     );
   }
 }
