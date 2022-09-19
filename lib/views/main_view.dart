@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hinstagram/views/feed_view.dart';
+import 'package:hinstagram/views/profile_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -10,8 +12,8 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   int _currentPage = 0;
   final List<Widget> _pages = [
-    Container(color: Colors.blue,),
-    Container(color: Colors.red,),
+    const FeedView(),
+    const ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {

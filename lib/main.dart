@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hinstagram/views/home_view.dart';
 import 'package:hinstagram/views/login_view.dart';
 import 'package:hinstagram/views/main_view.dart';
 import 'package:hinstagram/views/register_veiw.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
